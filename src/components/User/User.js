@@ -1,8 +1,10 @@
 import React from 'react';
 
+import
+
 const User = ({user}) => {
     return (
-        <div>
+        <div className='userStyle'>
             id: {user.id}
             <br/>
             name: {user.name}
