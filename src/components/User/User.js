@@ -2,7 +2,8 @@ import React from 'react';
 
 import './User.css'
 
-const User = ({user}) => {
+const User = ({user, setUserId}) => {
+
     return (
         <div className='userStyle'>
             id: {user.id}
@@ -11,7 +12,8 @@ const User = ({user}) => {
             <br/>
             username: {user.username}
             <br/>
-            <button onSubmit={getPosts}>Get Posts</button>
+            <button onClick={() => setUserId(user.id)}>Get Posts</button>
+
         </div>
     );
 };

@@ -1,15 +1,9 @@
 import React, {useEffect, useState} from 'react';
 
 import User from "../User/User";
-const Users = () => {
+const Users = ({setUserId}) => {
     const [users, setUsers] = useState([]);
-    const [user, setUser] = useState(null);
 
-    const getPosts = (e) => {
-        e.preventDefault()
-        userService.getById(userId)
-            .then(value => setUser(value))
-    }
     useEffect(()=> {
        fetch('https://jsonplaceholder.typicode.com/users')
            .then(value => value.json())
@@ -17,7 +11,8 @@ const Users = () => {
     },[]);
     return (
         <div>
-            {users.map(value => <User key={value.id} user={value}/>)}
+            {users.map(value => <User key={value.id} user={value} setUserId={setUserId}/>)}
+            {/*<button onSubmit={getPosts}>Get Posts</button>*/}
         </div>
     );
 };
