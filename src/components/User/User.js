@@ -1,6 +1,6 @@
 import React from 'react';
 
-import
+import './User.css'
 
 const User = ({user}) => {
     return (
