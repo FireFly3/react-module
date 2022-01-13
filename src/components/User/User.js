@@ -10,6 +10,8 @@ const User = ({user}) => {
             name: {user.name}
             <br/>
             username: {user.username}
+            <br/>
+            <button onSubmit={getPosts}>Get Posts</button>
         </div>
     );
 };
