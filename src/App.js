@@ -7,61 +7,17 @@ import UserDetail from "./components/UserDetails/UserDetail";
 
 function App() {
     const [userId, setUserId] = useState(null);
-
+    const [flagForPosts, setFlagForPosts] = useState(null);
 
     return (
-        <div>
-            <Users setUserId={setUserId}/>
-            <UserDetail/>
-            {userId && <Posts userId={userId}/>}
+        <div className='window'>
+            <div className='upper_block'><Users setUserId={setUserId}/>
+                {userId && <UserDetail userId={userId} setFlagForPosts={setFlagForPosts} flagForPosts={flagForPosts}/>}
+            </div>
+            <div className='bottom_block'>{userId && flagForPosts && <Posts userId={userId}/>}</div>
         </div>
     );
 }
 
 export default App;
-
-// import React, {useEffect, useState} from 'react';
-//
-// import {userService} from "./services/userServices";
-// import User from "./components/User";
-//
-// const App = () => {
-//
-//     const [users, setUsers] = useState([]);
-//     const [userId, setUserId] = useState(0);
-//     const [user, setUser] = useState(null);
-//
-//     useEffect(()=>{
-//         userService.getAll()
-//             .then(value => setUsers(value))
-//     },[])
-//
-//     const send = (e) => {
-//         e.preventDefault()
-//         userService.getById(userId)
-//             .then(value => setUser(value))
-//     }
-//
-//
-//
-//     const formHandler = (e) => {
-//         const id = e.target.value;
-//         setUserId(id)
-//
-//     }
-//     return (
-//         <div>
-//             <form onSubmit={send}>
-//                 <select name={'userId'} value={userId} onChange={formHandler}>
-//                     {users.map(value => <option key={value.id} value={value.id}>{value.id}) {value.name}</option> )}
-//                 </select>
-//                 <button>send</button>
-//             </form>
-//             {user && <User user={user} />}
-//         </div>
-//     );
-// };
-//
-// export default App;
-
 

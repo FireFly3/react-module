@@ -1,9 +1,12 @@
-.userStyle {
-    border: 1px solid black;
-    width: 650px;
+.details {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 5px 25px 5px 5px;
+    border: 1px solid black;
+    margin: 5px 5px 5px 25px;
+}
+
+.userDetails {
+
 }

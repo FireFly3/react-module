@@ -1,42 +1,24 @@
 import React, {useEffect, useState} from 'react';
-import User from "../User/User";
 
-const UserDetail = ({userId}) => {
-    const [userDetails, setUserDetails] = useState([])
+import './UserDetail.css'
 
-    useEffect(()=> {
-        fetch('https://jsonplaceholder.typicode.com/users'+userId)
+const UserDetail = ({userId, setFlagForPosts, flagForPosts}) => {
+    const [userDetails, setUserDetails] = useState(null)
+
+    useEffect(() => {
+        fetch('https://jsonplaceholder.typicode.com/users/' + userId)
             .then(value => value.json())
             .then(value => setUserDetails(value))
-    },[])
+    }, [userId])
+
     return (
-        <div>
-            {/*{userDetails.map(value => <User key={userId}/>)}*/}
+        <div className='details'>
+            <div className='userDetails'>
+                {JSON.stringify(userDetails)}
+            </div>
+            <div className='userComments'><input onClick={() => setFlagForPosts(!flagForPosts)} type="button" value="Get Posts"/></div>
         </div>
     );
 };
 
 export default UserDetail;
-
-// import React, {useEffect, useState} from 'react';
-// import Post from "./post";
-//
-// const Posts = ({userId}) => {
-//     const [posts, setPosts] = useState([]);
-//
-//     useEffect(() => {
-//         fetch('https://jsonplaceholder.typicode.com/users/' + userId + '/posts')
-//             .then(value => value.json())
-//             .then(value => setPosts(value))
-//     }, [setPosts, userId])
-//
-//     return (
-//         <div>
-//             <div>
-//                 {posts.map(value => <Post key={value.id} post={value}/>)}
-//             </div>
-//         </div>
-//     );
-// };
-//
-// export default Posts;

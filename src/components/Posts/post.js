@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Post = () => {
+
+const Post = ({post}) => {
     return (
         <div>
-
+            {JSON.stringify(post)}
         </div>
     );
 };
