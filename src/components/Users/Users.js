@@ -1,13 +1,12 @@
 import React, {useEffect, useState} from 'react';
 
-const Users = () => {
-    const[users, setUsers ] = useState([]);
+import User from "../User/User";
 
-    useEffect()
+const Users = ({users}) => {
 
     return (
         <div>
-
+            {users.map(user => <User key={user.id} user={user}/>)}
         </div>
     );
 };
