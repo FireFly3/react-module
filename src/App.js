@@ -10,6 +10,7 @@ import Comments from "./pages/Comments/Comments";
 import UserDetail from "./pages/UserDetail/UserDetail";
 import Albums from "./pages/Albums/Albums";
 import UserPosts from "./pages/UserPosts/UserPosts";
+import UserPhotos from "./pages/UserPhotos/UserPhotos";
 
 function App() {
     return (
@@ -22,7 +23,7 @@ function App() {
                             <Route path={'posts'} element={<UserPosts/>}/>
                         </Route>
                         <Route path={':id/albums'} element={<Albums/>}>
-                            <Route path={'photo'} element={<UserPosts/>}/>
+                            <Route path={':albumId/photos'} element={<UserPhotos/>}/>
                         </Route>
                     </Route>
                     <Route path={'posts'} element={<Posts/>}>

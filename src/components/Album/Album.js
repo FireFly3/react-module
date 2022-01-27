@@ -7,7 +7,7 @@ const Album = ({album:{userId, id, title}}) => {
             <div>ID: {userId}</div>
             <div>Name: {id}</div>
             <div>UserName: {title}</div>
-            <button><Link to={'posts'}>Photos</Link></button>
+            <button><Link to={`${id}/photos`}>Photos</Link></button>
         </div>
     );
 };
