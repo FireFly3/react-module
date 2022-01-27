@@ -1,14 +1,6 @@
-import React, {useEffect, useState} from 'react';
-import {useParams} from "react-router-dom";
-import {commentsService} from "../../services/comments.service";
 
-const Comment = () => {
-    const {id} = useParams();
-    const [comment, setComment] = useState(null)
-    
-    useEffect(()=> {
-        commentsService.getById(id).then(value => setComment({...value}))
-    },[id])
+const Comment = ({comment}) => {
+
     return (
         <div>
             <div>

@@ -18,7 +18,7 @@ const SinglePost = () => {
                     <div>UserID: {post.userId}</div>
                     <div>Title: {post.title}</div>
                     <div>Body: {post.body}</div>
-                    <button><Link to={id.toString()}>Comments</Link></button>
+                    <button><Link to={'comments'}>Comments</Link></button>
                 </div>
             )}
             <div><Outlet/></div>
