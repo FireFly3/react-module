@@ -6,8 +6,8 @@ import './Post.css'
 const Post = ({post:{id, title}}) => {
     return (
         <div className={'post'}>
-            <div>{id}) {title}</div>
-            <button><Link to={id.toString()}>Post</Link></button>
+            <div className={'post'}>{id}) {title}</div>
+            <button className={'postButton'}><Link to={id.toString()}>Post</Link></button>
         </div>
     );
 };

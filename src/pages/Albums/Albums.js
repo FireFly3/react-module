@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {Outlet, useParams} from "react-router-dom";
 import {albumsService} from "../../services/album.service";
+
 import Album from "../../components/Album/Album";
+import './Albums.css'
 
 const Albums = () => {
     const {id} = useParams();
@@ -11,7 +13,7 @@ useEffect(()=> {
     albumsService.getByIdAlbums(id).then(value => setAlbums(value))
 },[id])
     return (
-        <div>
+        <div className={'albums'}>
             <div>
                 <h1>Albums</h1>
                 {albums.map(album => <Album key={album.id} album={album}/>)}

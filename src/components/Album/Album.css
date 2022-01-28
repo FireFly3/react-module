@@ -1,6 +1,5 @@
-.user {
+.album {
     display: flex;
+    width: 400px;
     justify-content: space-between;
-    width: 350px;
-    margin: 5px;
 }

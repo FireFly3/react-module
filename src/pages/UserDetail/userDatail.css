@@ -1,3 +1,9 @@
 .userDetail {
-    display: flex;
+    width: 800px;
+    margin: 5px;
+}
+
+.usersWithButton {
+    width: 400px;
+
 }

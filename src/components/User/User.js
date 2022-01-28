@@ -7,8 +7,10 @@ const User = ({user:{id, name}}) => {
     return (
         <div className={'user'}>
             <div>{id}) {name}</div>
-            <button><Link to={id.toString()}>UserDetail</Link></button>
-            <button><Link to={id.toString() + "/albums"}>Albums</Link></button>
+            <div>
+                <button><Link to={id.toString()}>UserDetail</Link></button>
+                <button><Link to={id.toString() + "/albums"}>Albums</Link></button>
+            </div>
         </div>
     );
 };

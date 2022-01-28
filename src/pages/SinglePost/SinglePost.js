@@ -14,6 +14,7 @@ const SinglePost = () => {
         <div>
             {post && (
                 <div>
+                    <h1>Post Detail</h1>
                     <div>ID: {post.id}</div>
                     <div>UserID: {post.userId}</div>
                     <div>Title: {post.title}</div>

@@ -1,6 +1,4 @@
-.user {
+.userPhoto {
     display: flex;
     justify-content: space-between;
-    width: 350px;
-    margin: 5px;
 }
