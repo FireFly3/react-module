@@ -1,5 +1,7 @@
 import {useReducer} from "react";
 
+import './App.css'
+
 const reducer = (state, action) => {
   switch (action.type) {
     case 'inc':
@@ -32,20 +34,20 @@ function App() {
 
 
   return (
-      <div >
-        <div>
+      <div className={'counters'}>
+        <div className={'couner'}>
           <div>{state.count1}</div>
           <button onClick={() => dispatch({type: 'inc'})}>INC</button>
           <button onClick={() => dispatch({type: 'dec'})}>DEC</button>
           <button onClick={() => dispatch({type: 'reset', payload: 0})}>RESET</button>
         </div>
-        <div>
+        <div className={'couner'}>
           <div>{state.count2}</div>
           <button onClick={() => dispatch({type: 'inc1'})}>INC</button>
           <button onClick={() => dispatch({type: 'dec1'})}>DEC</button>
           <button onClick={() => dispatch({type: 'reset1', payload: 0})}>RESET</button>
         </div>
-        <div>
+        <div className={'couner'}>
           <div>{state.count3}</div>
           <button onClick={() => dispatch({type: 'inc2'})}>INC</button>
           <button onClick={() => dispatch({type: 'dec2'})}>DEC</button>
